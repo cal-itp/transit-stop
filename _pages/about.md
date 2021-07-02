@@ -2,7 +2,7 @@
 layout: skinny
 title: About us
 ---
-Welcome to the California Mobility Marketplace!
+Welcome to the California Mobility Marketplace! 
 
 Managed by <a href="http://www.calitp.org/" target="_blank">Cal-ITP</a>, this website seeks to make the transition to contactless fare collection and GTFS Realtime compliance as easy and cost-effective as possible through a new and innovative approach. 
 
