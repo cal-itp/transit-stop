@@ -1,5 +1,5 @@
 {% for menu_item in include.menu_items %}
-  {% assign current_page = page.url | replace: '.html', '' %}
+  {% assign current_page = page.url | split: '/' | shift | first | replace: '.html', '' | prepend: '/' %}
   <li class="{{ include.list_class | default: '' }}">
     <a
       href="{{ menu_item.url }}"

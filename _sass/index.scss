@@ -15,12 +15,16 @@
 @import "overrides/main-content";
 @import "overrides/tables";
 
+@import "components/filterable-table";
 @import "components/footer";
+@import "components/footnotes";
 @import "components/header";
 @import "components/imaged-section";
+@import "components/newsletter";
 @import "components/page-header";
 @import "components/pill";
 
+@import "pages/contracts";
 @import "pages/home";
 @import "pages/provider-map";
 @import "pages/go-contactless";

@@ -1,6 +1,6 @@
 ---
 layout: default
-class_name: provider-map
+class_name: provider-map no-banner
 gtags_script: |
   function handleDownloadClick() {
     gtag('event', 'download', {
@@ -78,9 +78,9 @@ gtags_script: |
     <div class="col-md-5 d-flex align-items-center">
       <div class="provider-california-map" id="map"></div>
     </div>
-    <div class="col-md-7 provider-agency-table-container">
+    <div class="col-md-7 filterable-table-container">
       <div
-        class="provider-agency-filters"
+        class="filterable-table__pills"
         id="filter-pills"
       ></div>
       <div

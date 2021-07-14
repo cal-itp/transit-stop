@@ -1,0 +1,100 @@
+---
+layout: default
+title: Pre-approved Contracts
+show_newsletter: true
+class_name: no-banner
+---
+
+<script defer src="https://unpkg.com/tabulator-tables@4.9.3/dist/js/tabulator.min.js"></script>
+<script defer src="/scripts/smart-table.js"></script>
+
+<div class="container container--skinny">
+  <article class="mb-5">
+    <h1 class="page-header">Pre-approved Contracts</h1>
+    <p class="mb-0">
+      On behalf of Caltrans, Cal-ITP can connect you with pre-approved contracts and competitive rates to help you modernize
+      your transit system. Click the contract number below to view all procurement documentation. If you need further
+      procurement assistance, you can <a href="/contact">get in touch</a> with Cal-ITP.
+    </p>
+  </article>
+</div>
+
+<div class="container">
+  <section
+    id="pre-approved-contracts"
+    class="filterable-table-container"
+    data-role="smart-table"
+    data-filterable-cols="product"
+  >
+    <div class="filterable-table__pills text-md-right"></div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th tabulator-formatter="html">Contract</th>
+          <th>Category</th>
+          <th>Product</th>
+          <th tabulator-formatter="html">Vendor</th>
+          {% comment %}<th tabulator-formatter="html">User Instructions</th>{% endcomment %}
+        </tr>
+      </thead>
+      <tbody>
+        {% for contract in site.data.contracts.entries %}
+          <tr>
+            <td>
+              <a
+                href="{{ contract.contract_url }}"
+                referrerpolicy="no-referrer"
+                target="_blank"
+              >
+                {{ contract.contract }}
+              </a>
+            </td>
+            <td>
+              {{ contract.category }}
+            </td>
+            <td>
+              {{ contract.product }}
+            </td>
+            <td>
+              {{ contract.vendor }}
+              {% for footnote in contract.footnotes %}
+                <sup>
+                  <a
+                    id="fn-{{ footnote }}-ref"
+                    href="#fn-{{ footnote }}"
+                    class="no-default-style footnote-link"
+                  >
+                    {{ footnote }}
+                  </a>
+                </sup>
+              {% endfor %}
+            </td>
+            {% comment %}
+            <td>
+              {% if contract.user_instructions %}
+                <a
+                  href="{{ contract.user_instructions}}"
+                  aria-label="User instructions for using {{ contract.vendor }} as a vendor"
+                  referrerpolicy="no-referrer"
+                  target="_blank"
+                >
+                  Instructions
+                </a>
+              {% endif %}
+            </td>
+            {% endcomment %}
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <footer>
+      <ol class="footnote-listing">
+        {% for footnote in site.data.contracts.footnotes %}
+          <li id="fn-{{ footnote[0] }}">
+            {{ footnote[1] }}
+          </li>
+        {% endfor %}
+      </ol>
+    </footer>
+  </section>
+</div>

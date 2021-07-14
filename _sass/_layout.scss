@@ -10,4 +10,15 @@
   }
 
   .mobi-mart-footer {}
+
+  &.no-banner {
+    .mobi-mart-content {
+      margin-top: 20px;
+
+      @include media-breakpoint-up(md) {
+        // Magic number to get 110px spacing between bottom of nav text and first element of the page.
+        margin-top: 50px;
+      }
+    }
+  }
 }

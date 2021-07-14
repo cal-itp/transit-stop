@@ -8,4 +8,9 @@
       background: 0;
     }
   }
+
+  &.no-default-style {
+    border-bottom: 0;
+    font-weight: normal;
+  }
 }

@@ -1,0 +1,25 @@
+a.footnote-link {
+  display: inline-flex;
+
+  &::before {
+    content: '[';
+  }
+
+  &::after {
+    content: ']';
+  }
+}
+
+.footnote-listing {
+  font-size: 0.85rem;
+
+  li:target {
+    background-color: yellow;
+
+    // Stupid overrides for some very invasive CA Gov styles
+    &::before {
+      height: auto;
+      margin: 0;
+    }
+  }
+}

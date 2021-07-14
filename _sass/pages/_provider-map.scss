@@ -18,27 +18,9 @@ $map-height-md: 560px;
   }
 }
 
-.provider-agency-table-container {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
-
-// These are magic numbers that probably can be replaced by some CSS magic
-.provider-agency-filters {
-  left: 15px;
-  position: absolute;
-  top: -35px;
-}
-
 .provider-agency-table {
   height: 630px;
   width: 100%;
-
-  a {
-    font-weight: bold;
-  }
 }
 
 .provider-data-dictionary {

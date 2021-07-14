@@ -1,0 +1,98 @@
+---
+layout: skinny
+title: Contactless fare collection
+show_newsletter: true
+class_name: no-banner
+
+new_technology:
+  - icon: payment-processor.svg
+    icon-alt: Dollar sign wrapped with arrows in a circular shape
+    title: Payment Processor
+    url: ./view?pre-approved-contracts-filter-product=Payment Processor
+    button: View contracts
+    content: >
+      Back-end service that transmits fares from riders' bank cards and smart devices to transit providers' bank accounts.
+
+  - icon: fare-calculation.svg
+    icon-alt: Mathematical symbols
+    title: Fare calculation software
+    subtitle: Transit Processor Services
+    url: https://caleprocure.ca.gov/event/77601/5217028
+    url_target: _blank
+    button: View the RFP
+    content: >
+      Recognizes riders' unique payment methods and charges the best fare for each trip, accounting for applicable
+      discounts and distance traveled. It also enables "fare capping," meaning that riders will no longer be charged for
+      additional trips after reaching the cost of an unlimited pass.
+
+  - icon: fare-validator.svg
+    icon-alt: A fare validation device
+    title: Fare validators
+    subtitle: Payment Acceptance Devices
+    url: https://caleprocure.ca.gov/event/77601/5217028
+    url_target: _blank
+    button: View the RFP
+    content: >
+      On-board or platform devices equipped with NFC and cEMV technology to read and validate riders’ contactless bank
+      cards and smart devices.
+---
+
+<p>
+  On behalf of <a href="https://dot.ca.gov/">Caltrans</a>, Cal-ITP can connect you with pre-approved contracts and
+  competitive rates to help you modernize your transit system. We recommend creating an action plan for becoming
+  GTFS-compliant before going contactless.
+</p>
+
+<p class="my-4">
+  <a
+    href="https://dot.ca.gov/programs/rail-and-mass-transportation/gtfs/assessment-process-documentation"
+    class="btn btn-outline-primary"
+    target="_blank"
+  >
+    Learn how to become GTFS-compliant
+  </a>
+</p>
+
+<p class="mb-60px">
+  To add contactless fare collection, you will need to procure up to three new technologies:
+</p>
+
+{% for technology in page.new_technology %}
+  <article class="contactless-technology">
+    <div class="contactless-technology__icon">
+      <img src="/uploads/{{ technology.icon }}" alt="{{ technology.icon-alt }}" />
+    </div>
+    <div class="contactless-technology__content">
+      <h2 class="contactless-technology__header h3">
+        {{ technology.title }}
+        {% if technology.subtitle %}
+          <div class="contactless-technology__subheader">
+            ({{ technology.subtitle }})
+          </div>
+        {% endif %}
+      </h2>
+
+      <div class="mb-4">
+        {{ technology.content | markdownify }}
+      </div>
+
+      {% if technology.url %}
+        <a class="btn btn-primary px-5" href="{{ technology.url }}" target="{{ technology.url_target | default: '_self' }}">
+      {% else %}
+        <p class="text-red"><em><strong>
+      {% endif %}
+
+      {{ technology.button }}
+
+      {% if technology.url %}
+        </a>
+      {% else %}
+        </strong></em></p>
+      {% endif %}
+    </div>
+  </article>
+{% endfor %}
+
+<p class="text-right my-5">
+  <a href="./view">View all contracts</a>
+</p>

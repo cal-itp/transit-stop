@@ -24,6 +24,7 @@
   }
 
   .first-level-link[aria-current="page"] {
+    background-color: $blue-lightest;
     color: $primary;
   }
 }

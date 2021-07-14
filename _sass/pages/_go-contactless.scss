@@ -43,10 +43,16 @@ $gc-blue: rgb(235, 248, 252);
   }
 }
 
-.go-contactless-benefit-card {
-  background-color: #fff;
+.go-contactless-benefit-card,
+.go-contactless-agency {
   border-radius: 6px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+
+.go-contactless-benefit-card {
+  background-color: #fff;
   padding: 1rem;
 }
 
